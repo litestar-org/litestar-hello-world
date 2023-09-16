@@ -14,7 +14,6 @@ keywords = [
     "rest",
     "asgi",
     "litestar",
-    ""
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -40,7 +39,7 @@ readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8,<4.0"
 dependencies = [
-    "litestar>=2.0.1",
+    "litestar[standard]>=2.0.1",
 ]
 
 [project.urls]
@@ -57,13 +56,6 @@ documentation = "https://docs.litestar.dev/"
 [build-system]
 build-backend = "hatchling.build"
 requires = ["hatchling"]
-
-[project.group]
-[project.group.dev.dependencies]
-pre-commit = "*"
-pytest = "*"
-pytest-asyncio = "*"
-pytest-cov = "*"
 
 [project.scripts]
 app = "litestar.__main__:run_cli"
@@ -100,7 +92,7 @@ lint = [
     "pyright>=1.1.327",
     "sourcery>=1.9.0",
 ]
-dev = [
+test = [
     "pytest>=7.4.2",
     "pytest-asyncio>=0.21.1",
     "pytest-cov>=4.1.0",
