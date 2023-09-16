@@ -10,7 +10,7 @@ from sphinx.application import Sphinx
 __all__ = ["setup", "update_html_context"]
 
 
-project = "project-template"
+project = "litestar-hello-world"
 copyright = "2023, Litestar-Org"
 author = "Litestar-Org"
 
@@ -71,9 +71,9 @@ html_title = "Litestar Project Template"
 
 html_theme_options = {
     "use_page_nav": False,
-    "github_repo_name": "project-template",
+    "github_repo_name": "litestar-hello-world",
     "logo": {
-        "link": "https://github.com/litestar-org/project-template.git",
+        "link": "https://github.com/litestar-org/litestar-hello-world.git",
     },
     "extra_navbar_items": {
         "Documentation": "index",

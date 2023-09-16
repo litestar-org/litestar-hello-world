@@ -14,7 +14,6 @@ keywords = [
     "rest",
     "asgi",
     "litestar",
-    "starlite",
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -33,25 +32,25 @@ classifiers = [
     "Topic :: Software Development",
     "Typing :: Typed",
 ]
-name = "project-template"
+name = "litestar-hello-world"
 version = "0.1.0"
-description = "template-project is a Python template project designed to simplify the setup of a new project."
+description = "litestar-hello-world is a minimal implementation of a Litestar application."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8,<4.0"
 dependencies = [
-    "litestar[standard]",
+    "litestar>=2.0.1",
 ]
 
 [project.urls]
-"Issue Tracker" = "https://github.com/litestar-org/project-template/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
-Changelog = "https://github.com/litestar-org/project-template/releases/"
+"Issue Tracker" = "https://github.com/litestar-org/litestar-hello-world/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
+Changelog = "https://github.com/litestar-org/litestar-hello-world/releases/"
 Twitter = "https://twitter.com/LitestarAPI"
 Reddit = "https://www.reddit.com/r/litestarapi"
 Discord = "https://discord.gg/MmcwxztmQb"
 Blog = "https://blog.litestar.dev"
 homepage = "https://litestar.dev/"
-repository = "https://github.com/litestar-org/project-template"
+repository = "https://github.com/litestar-org/litestar-hello-world"
 documentation = "https://docs.litestar.dev/"
 
 [build-system]
