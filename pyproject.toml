@@ -14,6 +14,7 @@ keywords = [
     "rest",
     "asgi",
     "litestar",
+    ""
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -66,7 +67,6 @@ pytest-cov = "*"
 
 [project.scripts]
 app = "litestar.__main__:run_cli"
-
 
 [tool.pdm.scripts]
 lint = "pre-commit run --all-files"

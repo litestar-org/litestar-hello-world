@@ -53,16 +53,28 @@ curl localhost:8000/sync -w "\n" && curl localhost:8000/async -w "\n"
 
 ## Litestar Development
 
-If you want to use this app to test a local version of `Litestar`, the litestar dependency in
-`pyproject.toml` to:
+If you want to use this app to test a local version of `Litestar`, change the litestar dependency in `pyproject.toml` to:
 
 ```toml
-litestar = {path = "../litestar", develop = true}
+dev = [
+    ...
+    "litestar @ git+https://github.com/litestar-org/litestar.git",
+]
 ```
 
-This assumes that `Litestar` and this app exist in the same directory.
+...or you can add it manually with:
+
+```shell
+pdm add "git+https://github.com/litestar-org/litestar.git" --dev
+```
+
+> [!NOTE]\
+> See [PDM - Editable Dependencies](https://pdm.fming.dev/latest/usage/dependency/#editable-dependencies) for more info.
 
 Run `uvicorn` or any other ASGI-compliant server from the root of this app:
+
+> [!IMPORTANT]\
+> This assumes that `Litestar` and this app exist in the same directory.
 
 ```shell
 pdm run uvicorn app:app --reload --reload-dir .
