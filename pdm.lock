@@ -645,12 +645,12 @@ files = [
 
 [[package]]
 name = "identify"
-version = "2.5.28"
+version = "2.5.29"
 requires_python = ">=3.8"
 summary = "File identification library for Python"
 files = [
-    {file = "identify-2.5.28-py2.py3-none-any.whl", hash = "sha256:87816de144bf46d161bd5b3e8f5596b16cade3b80be537087334b26bc5c177f3"},
-    {file = "identify-2.5.28.tar.gz", hash = "sha256:94bb59643083ebd60dc996d043497479ee554381fbc5307763915cda49b0e78f"},
+    {file = "identify-2.5.29-py2.py3-none-any.whl", hash = "sha256:24437fbf6f4d3fe6efd0eb9d67e24dd9106db99af5ceb27996a5f7895f24bf1b"},
+    {file = "identify-2.5.29.tar.gz", hash = "sha256:d43d52b86b15918c137e3a74fff5224f60385cd0e9c38e99d07c257f02f151a5"},
 ]
 
 [[package]]
@@ -1101,7 +1101,7 @@ files = [
 
 [[package]]
 name = "polyfactory"
-version = "2.8.1"
+version = "2.8.2"
 requires_python = ">=3.8,<4.0"
 summary = "Mock data generation factories"
 dependencies = [
@@ -1109,8 +1109,8 @@ dependencies = [
     "typing-extensions",
 ]
 files = [
-    {file = "polyfactory-2.8.1-py3-none-any.whl", hash = "sha256:3f7525ffa6736181cf746d3c30063a953e6b566aec07e8b7268f52913a2838dd"},
-    {file = "polyfactory-2.8.1.tar.gz", hash = "sha256:2b947f6ae8df96cfbca0ba94a573a885e4291eb893c3eb5daa7c1efa3385834e"},
+    {file = "polyfactory-2.8.2-py3-none-any.whl", hash = "sha256:82f0a7662eedb713260508a82587a4e37dc290a22e8715862d806a6a40c74388"},
+    {file = "polyfactory-2.8.2.tar.gz", hash = "sha256:1f2571b143172f22f9ad1f85dec8b79e83a0620ea5844f1a1f67d275df6cc465"},
 ]
 
 [[package]]
