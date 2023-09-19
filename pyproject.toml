@@ -128,8 +128,6 @@ exclude = ["tools"]
 strict-imports = false
 
 [tool.mypy]
-plugins = ["pydantic.mypy"]
-
 warn_unused_ignores = true
 warn_redundant_casts = true
 warn_unused_configs = true

@@ -59,25 +59,8 @@ repos:
     rev: "v1.5.1"
     hooks:
       - id: mypy
-        exclude: "test_apps|tools|docs|tests/examples|"
-        additional_dependencies:
-          [
-            annotated_types,
-            hypothesis,
-            polyfactory,
-            pydantic-extra-types,
-            pydantic>=2,
-            pytest,
-            pytest-lazy-fixture,
-            pytest-mock,
-            pytest-timeout,
-            pytest_docker,
-            redis,
-            rich,
-            rich-click,
-            click,
-            uvicorn,
-          ]
+        exclude: "tools|docs"
+        additional_dependencies: ["litestar[standard]", pytest]
   - repo: https://github.com/sphinx-contrib/sphinx-lint
     rev: "v0.6.8"
     hooks:
