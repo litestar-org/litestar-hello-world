@@ -13,7 +13,6 @@ PDM 			?= 	pdm $(PDM_OPTS)
 
 .EXPORT_ALL_VARIABLES:
 
-
 .PHONY: help
 help: 		   										## Display this help text for Makefile
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z0-9_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
@@ -53,7 +52,6 @@ clean: 												## Cleanup temporary build artifacts
 	@find . -name '__pycache__' -exec rm -rf {} +
 	@find . -name '.ipynb_checkpoints' -exec rm -rf {} +
 	@rm -rf .coverage coverage.xml coverage.json htmlcov/ .pytest_cache tests/.pytest_cache tests/**/.pytest_cache .mypy_cache
-	$(MAKE) docs-clean
 
 destroy: 											## Destroy the virtual environment
 	@rm -rf .venv
@@ -81,35 +79,9 @@ test:  												## Run the tests
 	@$(ENV_PREFIX)pytest tests
 	@echo "=> Tests complete"
 
-.PHONY: test-examples
-test-examples:            			              	## Run the examples tests
-	pytest docs/examples
-
 .PHONY: test-all
-test-all: test test-examples 						## Run all tests
+test-all: test 						## Run all tests
 
 
 .PHONY: check-all
 check-all: lint test-all coverage 					## Run all linting, tests, and coverage checks
-
-# =============================================================================
-# Docs
-# =============================================================================
-.PHONY: docs-install
-docs-install: 										## Install docs dependencies
-	@echo "=> Installing documentation dependencies"
-	@$(PDM) install --group docs
-	@echo "=> Installed documentation dependencies"
-
-docs-clean: 										## Dump the existing built docs
-	@echo "=> Cleaning documentation build assets"
-	@rm -rf docs/_build
-	@echo "=> Removed existing documentation build assets"
-
-docs-serve: docs-clean 								## Serve the docs locally
-	@echo "=> Serving documentation"
-	$(ENV_PREFIX)sphinx-autobuild docs docs/_build/ -j auto --watch src --watch docs --watch tests --watch CONTRIBUTING.rst --port 8002
-
-docs: docs-clean 									## Dump the existing built docs and rebuild them
-	@echo "=> Building documentation"
-	@$(ENV_PREFIX)sphinx-build -M html docs docs/_build/ -E -a -j auto --keep-going
