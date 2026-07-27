@@ -53,7 +53,7 @@ jobs:
         if: inputs.coverage
         run: pdm run pytest docs/examples tests --cov=src --cov-report=xml
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: inputs.coverage
         with:
           name: coverage-xml
